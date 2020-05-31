@@ -1,5 +1,9 @@
 
-<https://github.com/LeetCode-OpenSource/hire>
+# Readme
+
+![CI](https://github.com/Baoyx007/leetcode_hire/workflows/CI/badge.svg)
+
+REF: <https://github.com/LeetCode-OpenSource/hire>
 
 1. [x] 基础编程能力
 2. [x] 编写复杂的 TypeScript 类型
