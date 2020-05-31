@@ -1,11 +1,12 @@
-import { parseError } from '../index'
+import { parseError } from '../index';
+
 const fixtureStack = `TypeError: Error raised
   at bar http://192.168.31.8:8000/c.js:2:9
   at foo http://192.168.31.8:8000/b.js:4:15
   at calc http://192.168.31.8:8000/a.js:4:3
   at <anonymous>:1:11
   at http://192.168.31.8:8000/a.js:22:3
-`
+`;
 
 const fixtureFirefoxStack = `
   bar@http://192.168.31.8:8000/c.js:2:9
@@ -13,13 +14,14 @@ const fixtureFirefoxStack = `
   calc@http://192.168.31.8:8000/a.js:4:3
   <anonymous>:1:11
   http://192.168.31.8:8000/a.js:22:3
-`
+`;
+
 describe('parseError', () => {
   test('should chrome error works', () => {
-    let error = new Error('Error raised')
-    error.stack = fixtureStack
+    const error = new Error('Error raised');
+    error.stack = fixtureStack;
 
-    let errorMessage = parseError(error)
+    const errorMessage = parseError(error);
 
     expect(errorMessage).toStrictEqual({
       message: 'Error raised',
@@ -45,14 +47,14 @@ describe('parseError', () => {
           filename: 'http://192.168.31.8:8000/a.js',
         },
       ],
-    })
-  })
+    });
+  });
 
   test('should firefoxs error works', () => {
-    let error = new Error('Error raised')
-    error.stack = fixtureFirefoxStack
+    const error = new Error('Error raised');
+    error.stack = fixtureFirefoxStack;
 
-    let errorMessage = parseError(error)
+    const errorMessage = parseError(error);
 
     expect(errorMessage).toStrictEqual({
       message: 'Error raised',
@@ -78,6 +80,6 @@ describe('parseError', () => {
           filename: 'http://192.168.31.8:8000/a.js',
         },
       ],
-    })
-  })
-})
+    });
+  });
+});
