@@ -25,7 +25,7 @@ class AutocompleteController {
    * 比如，用户依次输入 a, b, c
    * 那么 payload$ 流会获得三个值："a", "ab", "abc"
    */
-  payload$: Subject<string>;
+  payload$!: Subject<string>;
 
   subscription: Subscription;
 

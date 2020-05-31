@@ -1,13 +1,7 @@
 {
-  "name": "leetcode_hire",
+  "name": "2.typescript",
   "version": "1.0.0",
   "description": "",
-  "private": true,
-  "workspaces": {
-    "packages": [
-      "problems/*"
-    ]
-  },
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -15,10 +9,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^26.0.1",
-    "lerna": "^3.13.2"
+    "jest": "^26.0.1"
   },
   "dependencies": {
-    "rxjs": "^6.5.5"
+    "@types/jest": "^25.2.3"
   }
 }
